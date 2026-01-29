@@ -276,7 +276,7 @@
 
       // Prices
       $$('[data-price-discount]').forEach(el=>{
-        el.textContent = money(dCfg.discountPrice ?? 449);
+        el.textContent = money(dCfg.discountPrice ?? 349);
       });
       $$('[data-price-official]').forEach(el=>{
         el.textContent = money(dCfg.officialPrice ?? 599);
@@ -287,7 +287,7 @@
       });
 
       $$('[data-price-active]').forEach(el=>{
-        const value = discountActive ? (dCfg.discountPrice ?? 449) : (dCfg.officialPrice ?? 599);
+        const value = discountActive ? (dCfg.discountPrice ?? 349) : (dCfg.officialPrice ?? 599);
         el.textContent = money(value);
       });
 
@@ -370,21 +370,12 @@
         const t = e.target && e.target.closest ? e.target.closest('[data-open-install]') : null;
         if(t){
           e.preventDefault();
-          // ضغطة واحدة = تثبيت مباشر إذا كان متاحًا
-          if(this.deferred){
-            this.deferred.prompt();
-            this.deferred.userChoice.then((choice)=>{
-              if(choice && choice.outcome === 'accepted'){
-                window.App && App.toast('تم التثبيت ✅', 'تم');
-              }
-              this.deferred = null;
-              this.hide();
-            });
-          }else{
-            this.show();
-          }
+          this.show();
         }
-      }); 
+      });
+
+      document.querySelectorAll('[data-open-install]').forEach(btn=>{
+        btn.addEventListener('click', ()=> this.show());
       });
 
       // iOS hint
@@ -494,7 +485,7 @@
           // keyword routing
           if(text.includes('سعر') || text.includes('كم') || text.includes('خصم')){
             const p = DATA.pricing || {};
-            const msg = `السعر الحالي ${money(p.discountPrice ?? 449)} ر.س (بدل ${money(p.officialPrice ?? 599)}). الخصم محدود، وعدد المقاعد يتحدث تلقائياً.`;
+            const msg = `السعر الحالي ${money(p.discountPrice ?? 349)} ر.س (بدل ${money(p.officialPrice ?? 599)}). الخصم محدود، وعدد المقاعد يتحدث تلقائياً.`;
             return msg;
           }
           if(text.includes('مقاعد') || text.includes('seat')){
@@ -560,8 +551,7 @@
         // Official contact button
         const contactBtn = body.querySelector('[data-contact]');
         contactBtn && contactBtn.addEventListener('click', ()=>{
-          Modals.close();
-          Router.go('support.html');
+          App.openTelegram('السلام عليكم، احتاج مساعدة بخصوص دورة STEP المكثفة 2026.');
         });
 
       }catch(e){
@@ -636,28 +626,15 @@
         const newMain = doc.querySelector('#spaMain');
         if(!newMain) throw new Error('No main found');
 
-        // Replace main content (انتقالات ناعمة)
-        const applyNewPage = () => {
-          main.innerHTML = newMain.innerHTML;
+        // Replace main content
+        main.innerHTML = newMain.innerHTML;
 
-          // Update title
-          if(doc.title) document.title = doc.title;
+        // Update title
+        if(doc.title) document.title = doc.title;
 
-          // Update page attribute
-          const pageName = newMain.getAttribute('data-page') || 'page';
-          document.body.setAttribute('data-page', pageName);
-        };
-
-        if('startViewTransition' in document){
-          try{
-            await document.startViewTransition(()=>{ applyNewPage(); }).finished;
-          }catch(e){
-            applyNewPage();
-          }
-        }else{
-          applyNewPage();
-        }
-
+        // Update page attribute
+        const pageName = newMain.getAttribute('data-page') || 'page';
+        document.body.setAttribute('data-page', pageName);
 
         // Update active nav links
         Nav.updateActive(href);

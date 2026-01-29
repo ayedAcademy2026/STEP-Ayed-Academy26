@@ -14,12 +14,51 @@
 
   let QUESTIONS = null; // loaded bank {questions:[]}
 
-  async function loadBank(){
-    if(QUESTIONS) return QUESTIONS;
-    const res = await fetch('./assets/questions.json', {cache:'force-cache'});
-    const data = await res.json();
-    QUESTIONS = data;
+  async function normalizeSection(section){
+    const s = String(section||'').toLowerCase().trim();
+    if(s === 'grammar' || s === 'vocabulary') return 'grammar';
+    if(s === 'reading') return 'reading';
+    if(s === 'listening') return 'listening';
+    return 'grammar';
+  }
+
+  function normalizeQuestion(q){
+    if(!q) return null;
+    const nq = Object.assign({}, q);
+    nq.id = String(nq.id ?? nq.qid ?? '').trim() || (Math.random().toString(36).slice(2));
+    nq.section = normalizeSection(nq.section);
+    if(nq.answerIndex == null && nq.correctIndex != null) nq.answerIndex = nq.correctIndex;
+    if(nq.answerIndex == null && typeof nq.answer === 'number') nq.answerIndex = nq.answer;
+    nq.difficulty = Number(nq.difficulty || 3);
+    // normalize passage/transcript keys
+    if(nq.passage == null && nq.passageText != null) nq.passage = nq.passageText;
+    if(nq.transcript == null && nq.audioText != null) nq.transcript = nq.audioText;
+    // normalize options
+    if(!Array.isArray(nq.options) && Array.isArray(nq.choices)) nq.options = nq.choices;
+    return nq;
+  }
+
+  function normalizeBank(data){
+    if(Array.isArray(data)) data = {questions: data};
+    if(!data || typeof data !== 'object') data = {questions: []};
+    if(!Array.isArray(data.questions)) data.questions = [];
+    data.questions = data.questions.map(normalizeQuestion).filter(Boolean);
     return data;
+  }
+
+  function loadBank(){
+    if(QUESTIONS) return Promise.resolve(QUESTIONS);
+    return fetch('./assets/questions.json', {cache:'no-store'}).then(r => {
+      if(!r.ok) throw new Error('questions.json not found');
+      return r.json();
+    }).then(raw => {
+      QUESTIONS = normalizeBank(raw);
+      return QUESTIONS;
+    }).catch(err => {
+      console.error(err);
+      QUESTIONS = {questions: []};
+      return QUESTIONS;
+    });
   }
 
   function bySection(list){
@@ -72,6 +111,8 @@
     return Math.round((n/d)*100);
   }
 
+
+  const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
   function classifyLevel(p){
     if(p < 45) return {label:'مبتدئ', note:'ركّز على الأساسيات + تطبيق يومي.'};
     if(p < 70) return {label:'متوسط', note:'مستواك جيد — نحتاج نرفع الدقة والوقت.'};
@@ -361,6 +402,10 @@
     loadBank().then(data=>{
       const lastIds = App.lsGet('lastQuestionIds', []) || [];
       const selected = pickQuestions(data.questions || [], attempt, lastIds);
+      if(!selected.length){
+        App.toast('تعذر تشغيل الاختبار حالياً. حدّث الصفحة وجرب مرة ثانية.', 'تنبيه');
+        return;
+      }
       const state = {
         attempt,
         createdAt: Date.now(),
@@ -525,7 +570,8 @@
         const q = qById(questionIds[i]);
         if(!q) continue;
         const a = answers[i];
-        const isCorrect = (a != null && a === q.answerIndex);
+        const correctIndex = (q.answerIndex != null ? q.answerIndex : q.correctIndex);
+        const isCorrect = (a != null && a === correctIndex);
         if(isCorrect) correct++;
         secStats[q.section].total++;
         if(isCorrect) secStats[q.section].correct++;
@@ -534,7 +580,7 @@
           id: q.id,
           section: q.section,
           chosen: a,
-          correctIndex: q.answerIndex
+          correctIndex: correctIndex
         });
       }
 

@@ -1,10 +1,10 @@
 window.SITE_DATA = {
-  "siteName": "أكاديمية عايد — دورة STEP المكثفة 2026",
+  "siteName": "أكاديمية عايد — STEP المكثفة 2026",
   "academyName": "أكاديمية عايد الرسمية",
   "telegramUsername": "Ayed_Academy_2026",
   "telegramUrl": "https://t.me/Ayed_Academy_2026",
   "pricing": {
-    "discountPrice": 349,
+    "discountPrice": 449,
     "officialPrice": 599,
     "currency": "ر.س",
     "discountDays": 7,
@@ -14,7 +14,8 @@ window.SITE_DATA = {
     "initial": 150,
     "decrementEverySeconds": 30,
     "refillThreshold": 5,
-    "refillAmount": 50
+    "refillAmount": 50,
+    "discountDurationDays": 7
   },
   "bank": {
     "bankName": "بنك الإنماء",
@@ -229,11 +230,11 @@ window.SITE_DATA = {
     "locale": "ar-SA"
   },
   "app": {
-    "cacheVersion": "20260128"
+    "cacheVersion": "20260128b"
   },
   "assistant": {
-    "name": "مساعد التسجيل — أكاديمية عايد",
-    "subtitle": "تواصل رسمي: @Ayed_Academy_2026",
+    "name": "مساعد أكاديمية عايد",
+    "subtitle": "يساعدك داخل الموقع — والدعم الرسمي عبر نموذج الدعم",
     "quickActions": [
       {
         "label": "ابدأ اختبار تحديد المستوى",
@@ -290,5 +291,6 @@ window.SITE_DATA = {
         "a": "نعم، الدورة تشمل أحدث نماذج STEP 50 و STEP 51، مع تدريبات محاكية وتحليل أخطاء."
       }
     ]
-  }
+  },
+  "cacheVersion": "20260128b"
 };

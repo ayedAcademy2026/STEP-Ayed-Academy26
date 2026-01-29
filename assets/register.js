@@ -33,7 +33,7 @@
     const planTitle = res?.plan?.title || 'خطة مذاكرة';
     const planTips = (res?.plan?.tips || []).slice(0,2);
 
-    const priceActive = $('[data-price-active]') ? $('[data-price-active]').textContent : App.money(pricing.discountPrice ?? 449);
+    const priceActive = $('[data-price-active]') ? $('[data-price-active]').textContent : App.money(pricing.discountPrice ?? 349);
 
     // Keep message concise (URL length)
     const lines = [
