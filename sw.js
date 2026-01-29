@@ -1,7 +1,7 @@
 /* PWA Service Worker — أكاديمية عايد
    Cache-first for static assets and pages
 */
-const CACHE_VERSION = '20260128';
+const CACHE_VERSION = '20260128b';
 const CACHE_NAME = `ayed-step-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
@@ -20,15 +20,16 @@ const PRECACHE_URLS = [
   './refund.html',
   './404.html',
   './manifest.json',
-  './assets/styles.css?v=20260128',
-  './assets/site-data.js?v=20260128',
-  './assets/app.js?v=20260128',
-  './assets/test.js?v=20260128',
-  './assets/results.js?v=20260128',
-  './assets/register.js?v=20260128',
-  './assets/support.js?v=20260128',
+  './assets/styles.css?v=20260128b',
+  './assets/site-data.js?v=20260128b',
+  './assets/app.js?v=20260128b',
+  './assets/test.js?v=20260128b',
+  './assets/results.js?v=20260128b',
+  './assets/register.js?v=20260128b',
+  './assets/support.js?v=20260128b',
   './assets/questions.json',
-  './assets/icon.svg'
+  './assets/icon.svg',
+  './assets/icon-maskable.svg'
 ];
 
 self.addEventListener('install', (event) => {

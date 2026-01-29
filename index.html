@@ -11,8 +11,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>أكاديمية عايد — STEP المكثفة 2026</title>
-  <link rel="stylesheet" href="assets/styles.css?v=20260128" />
-  <script src="assets/site-data.js?v=20260128"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260128b" />
+  <script src="assets/site-data.js?v=20260128b"></script>
 </head>
 <body data-page="index">
   <div class="bg-shapes" aria-hidden="true"></div>
@@ -45,7 +48,9 @@
           <small>مقعد • <span data-seats-label>متاح</span></small>
         </div>
 
-        <button class="icon-btn" type="button" data-open-install aria-label="تثبيت التطبيق" title="تثبيت كـ تطبيق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 13.6V4a1 1 0 0 1 1-1z"/><path d="M5 19h14v2H5z"/></svg></button>
+        <button class="icon-btn btn-install" type="button" data-open-install aria-label="تثبيت التطبيق" title="تثبيت كـ تطبيق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 13.6V4a1 1 0 0 1 1-1z"/><path d="M5 19h14v2H5z"/></svg></button>
+
+        <button class="icon-btn" type="button" data-share data-share-title="أكاديمية عايد — STEP المكثفة 2026" data-share-text="اختبار تحديد المستوى + خطة مذاكرة + تسجيل سريع" aria-label="مشاركة الموقع" title="مشاركة الموقع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.8-4H15a3 3 0 0 0 3 3z"/><path d="M6 14a3 3 0 1 0 2.8 4H9a3 3 0 0 0-3-3z"/><path d="M18 16a3 3 0 1 0-2.1-5.1l-7.2 3.6a3 3 0 0 0 0 1l7.2 3.6A3 3 0 0 0 18 16z"/></svg></button>
 
         <button class="icon-btn menu-btn" type="button" data-drawer-open aria-label="القائمة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z"/></svg></button>
       </div>
@@ -96,7 +101,7 @@
         <div class="badge" style="width:max-content">
           <span class="dot"></span>
           <strong>تجربة مثل التطبيق</strong>
-          <small>SPA + PWA</small>
+          <small>تجربة تطبيق + تنقّل سريع</small>
         </div>
         <h1 class="headline">اختصر طريقك لنتيجة STEP الأفضل — بخطة واضحة مبنية على مستواك</h1>
         <p class="subline">
@@ -134,8 +139,8 @@
         <div class="spacer"></div>
         <div class="helper">
           ✅ حفظ التقدم تلقائيًا<br/>
-          ✅ تنقل سريع بدون إعادة تحميل (SPA-like)<br/>
-          ✅ قابل للتثبيت كتطبيق (PWA)<br/>
+          ✅ تنقل سريع بدون إعادة تحميل (تنقّل سريع-like)<br/>
+          ✅ قابل للتثبيت كتطبيق (تثبيت على الجوال)<br/>
           ✅ زر مشاركة خطتك بعد النتيجة عشان تنشر تجربتك
         </div>
         <div class="spacer"></div>
@@ -236,60 +241,61 @@
     </div>
   </section>
 
-  <section class="section">
+  
+<section class="section">
+  <div class="container">
     <div class="head">
-      <div>
-        <h2>آراء طلابنا ⭐</h2>
-        <p class="lead">مختارات سريعة — والباقي في صفحة قصص النجاح.</p>
-      </div>
-      <a class="btn btn-ghost" href="testimonials.html">كل الآراء</a>
+      <h2>تعليقات المتدربين</h2>
+      <p class="muted">نفس أسلوب المحادثات… عشان تشوف وش فعلاً يفرق مع الطلاب بسرعة.</p>
     </div>
 
-    <div class="grid cols-2">
-      <div class="card pad">
-        <b>تركي القحطاني ★★★★★</b>
-        <p class="muted" style="margin:8px 0 0">
-          كنت متوتر من اختبار STEP لأن أول مرة أختبره، لكن بعد ما رتبت مذاكرتي وصرت أطبق على نماذج محاكية، حسّيت الفرق بسرعة.
-          <br><span class="small">أكثر شيء فادني: نموذج 50 + ترتيب الخطة اليومية + تصحيح الأخطاء.</span>
-        </p>
-      </div>
-
-      <div class="card pad">
-        <b>منال التويجري ★★★★★</b>
-        <p class="muted" style="margin:8px 0 0">
-          كنت أذاكر من مصادر كثيرة وأتشتت، لكن هنا كل شيء مرتب ومقسّم، وخطة واضحة ما تخليك تضيع وقتك.
-          <br><span class="small">أكثر شيء فادني: القواعد المهمة + القراءة بالوقت + مراجعات سريعة.</span>
-        </p>
-      </div>
-
-      <div class="card pad">
-        <b>شهد المالكي ★★★★★</b>
-        <p class="muted" style="margin:8px 0 0">
-          اللي عجبني إن التدريب قريب من الاختبار الحقيقي، مو مجرد شرح. ومع كل نموذج أعرف نقاط ضعفي وأصلحها.
-          <br><span class="small">أكثر شيء فادني: نماذج محاكية + تحليل الأخطاء + خطة 7 أيام.</span>
-        </p>
-      </div>
-
-      <div class="card pad">
-        <b>ريم الحربي ★★★★★</b>
-        <p class="muted" style="margin:8px 0 0">
-          التجميعات اللي تنزل للمشتركين ممتازة جدًا وتختصر وقت كثير… وتحسها تفهمك نمط الأسئلة بطريقة عملية.
-          <br><span class="small">أكثر شيء فادني: التجميعات + مراجعة القواعد + تدريب القراءة والاستماع.</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="spacer"></div>
-    <div class="card pad">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
-        <div>
-          <b style="font-size:14px">جاهز تبدأ؟</b>
-          <div class="small">اختبار سريع — وبعدها يطلع لك كل شيء مرتب.</div>
+    <div class="chat-feed">
+      <div class="chat-item is-highlight">
+        <div class="chat-avatar">س</div>
+        <div class="chat-bubble">
+          <div class="chat-meta">
+            <span class="chat-name">سارة الحربي</span>
+            <span class="chat-verified">✅ تم التحقق</span>
+            <span class="chat-stars">★★★★★</span>
+          </div>
+          <div class="chat-text">اختبار تحديد المستوى طلع لي أخطائي المتكررة بالضبط… وخطتي صارت واضحة من أول يوم.</div>
+          <div class="chat-tag"><strong>أكثر شيء فادني:</strong> خطة 14 يوم + مراجعة الأخطاء.</div>
         </div>
-        <a class="btn btn-primary pulse" href="level-test.html"><span class="spark"></span>ابدأ اختبار تحديد المستوى</a>
+      </div>
+
+      <div class="chat-item">
+        <div class="chat-avatar">ت</div>
+        <div class="chat-bubble">
+          <div class="chat-meta">
+            <span class="chat-name">تركي القحطاني</span>
+            <span class="chat-verified">✅ تم التحقق</span>
+            <span class="chat-stars">★★★★★</span>
+          </div>
+          <div class="chat-text">استراتيجية القراءة (أسئلة أول + Keywords) وفرت علي وقت مرّة… صرت ألحق على القسم كامل.</div>
+          <div class="chat-tag"><strong>أكثر شيء فادني:</strong> إدارة الوقت + طريقة القراءة.</div>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <div class="chat-avatar">ع</div>
+        <div class="chat-bubble">
+          <div class="chat-meta">
+            <span class="chat-name">عبدالرحمن الشهري</span>
+            <span class="chat-verified">✅ تم التحقق</span>
+            <span class="chat-stars">★★★★★</span>
+          </div>
+          <div class="chat-text">خطة 7 أيام جابت لي الزبدة… نماذج يومية + مراجعة أخطاء بس، وفعلاً تحسنت بسرعة.</div>
+          <div class="chat-tag"><strong>أكثر شيء فادني:</strong> كبسولة 7 أيام.</div>
+        </div>
       </div>
     </div>
-  </section>
+
+    <div class="row" style="margin-top:14px">
+      <a class="btn btn-ghost" href="testimonials.html">عرض كل التعليقات</a>
+    </div>
+  </div>
+</section>
+
 </div>
 
   </main>
@@ -306,7 +312,7 @@
         <a href="refund.html" data-no-spa>الاسترجاع</a>
       </div>
       <div class="footer-note">
-        تواصل رسمي: <a href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener">@Ayed_Academy_2026</a><br>
+        الدعم الرسمي: <a href="support.html" data-no-spa>نموذج الدعم</a> — <span class="muted">@Ayed_Academy_2026</span><br>
         © 2026 أكاديمية عايد — جميع الحقوق محفوظة.
       </div>
     </div>
@@ -391,7 +397,7 @@
               <b style="font-size:13px;">تواصل رسمي (تيليجرام)</b>
               <p class="muted" style="margin:8px 0 0">إذا احتجت تأكيد/مشكلة بالإيصال — تواصل معنا مباشرة.</p>
               <div class="spacer"></div>
-              <button class="btn btn-primary" type="button" data-contact><span class="spark"></span>فتح تيليجرام</button>
+              <button class="btn btn-primary" type="button" data-contact><span class="spark"></span>نموذج الدعم الرسمي</button>
             </div>
           </div>
         </div>
@@ -448,10 +454,10 @@
     </template>
     
 
-  <script src="assets/app.js?v=20260128"></script>
-  <script src="assets/test.js?v=20260128"></script>
-  <script src="assets/results.js?v=20260128"></script>
-  <script src="assets/register.js?v=20260128"></script>
-  <script src="assets/support.js?v=20260128"></script>
+  <script src="assets/app.js?v=20260128b"></script>
+  <script src="assets/test.js?v=20260128b"></script>
+  <script src="assets/results.js?v=20260128b"></script>
+  <script src="assets/register.js?v=20260128b"></script>
+  <script src="assets/support.js?v=20260128b"></script>
 </body>
 </html>

@@ -11,8 +11,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>الدعم — أكاديمية عايد</title>
-  <link rel="stylesheet" href="assets/styles.css?v=20260128" />
-  <script src="assets/site-data.js?v=20260128"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260128b" />
+  <script src="assets/site-data.js?v=20260128b"></script>
 </head>
 <body data-page="support">
   <div class="bg-shapes" aria-hidden="true"></div>
@@ -45,7 +48,9 @@
           <small>مقعد • <span data-seats-label>متاح</span></small>
         </div>
 
-        <button class="icon-btn" type="button" data-open-install aria-label="تثبيت التطبيق" title="تثبيت كـ تطبيق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 13.6V4a1 1 0 0 1 1-1z"/><path d="M5 19h14v2H5z"/></svg></button>
+        <button class="icon-btn btn-install" type="button" data-open-install aria-label="تثبيت التطبيق" title="تثبيت كـ تطبيق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.6l2.3-2.3 1.4 1.4-4.7 4.7-4.7-4.7 1.4-1.4L11 13.6V4a1 1 0 0 1 1-1z"/><path d="M5 19h14v2H5z"/></svg></button>
+
+        <button class="icon-btn" type="button" data-share data-share-title="أكاديمية عايد — STEP المكثفة 2026" data-share-text="اختبار تحديد المستوى + خطة مذاكرة + تسجيل سريع" aria-label="مشاركة الموقع" title="مشاركة الموقع"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.8-4H15a3 3 0 0 0 3 3z"/><path d="M6 14a3 3 0 1 0 2.8 4H9a3 3 0 0 0-3-3z"/><path d="M18 16a3 3 0 1 0-2.1-5.1l-7.2 3.6a3 3 0 0 0 0 1l7.2 3.6A3 3 0 0 0 18 16z"/></svg></button>
 
         <button class="icon-btn menu-btn" type="button" data-drawer-open aria-label="القائمة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z"/></svg></button>
       </div>
@@ -87,60 +92,110 @@
     </div>
   </div>
 
-  <main id="spaMain" class="page page-enter" data-page="support">
-    
-<div class="container" id="supportRoot">
+  
+<main id="spaMain" data-page="support">
   <section class="section">
-    <div class="head">
-      <div>
-        <h2>الدعم والتواصل</h2>
-        <p class="lead">إذا واجهت مشكلة في التسجيل أو عندك استفسار — تواصل رسمي بسرعة.</p>
-      </div>
-      <button class="btn btn-primary" type="button" data-open-modal="assistant_tpl"><span class="spark"></span>مساعد التسجيل</button>
-    </div>
-
-    <div class="grid cols-2">
-      <div class="card pad">
-        <b>التواصل الرسمي (تيليجرام)</b>
-        <p class="muted" style="margin:8px 0 0">
-          الحساب الرسمي: <b>@Ayed_Academy_2026</b><br>
-          وقت العمل: السبت–الخميس 9ص–6م (بتوقيت السعودية)
+    <div class="container">
+      <div class="head">
+        <h1>الدعم الرسمي</h1>
+        <p class="muted">
+          عبّ النموذج بالتفصيل — وبعدها يفتح لك رسالة جاهزة للحساب الرسمي.
+          الهدف: ترتيب الطلبات وتسريع الرد، بدون لخبطة أو رسائل ناقصة.
         </p>
-        <div class="spacer"></div>
-        <a class="btn btn-primary" href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener"><span class="spark"></span>فتح تيليجرام</a>
       </div>
 
-      <div class="card pad">
-        <b>أرسل استفسار جاهز</b>
-        <p class="muted" style="margin:8px 0 0">اكتب رسالتك هنا — بنفتح تيليجرام برسالة جاهزة (بدون ما تضيع وقت).</p>
-        <div class="spacer"></div>
+      <div class="grid two">
+        <div class="card pad">
+          <h3 style="margin-top:0">عشان نرد عليك بسرعة</h3>
+          <ol class="steps">
+            <li>حدد نوع الطلب بدقة (متابعة بعد التحويل / استفسار / مشكلة).</li>
+            <li>إذا كنت <strong>مشترك</strong>: اكتب <strong>المبلغ + وقت التحويل + مرجع/آخر 4 أرقام</strong>.</li>
+            <li>اكتب المشكلة أو الاستفسار بجملة واضحة ثم التفاصيل.</li>
+          </ol>
 
-        <form id="supportForm" class="form">
-          <div class="field">
-            <label for="s_name">اسمك (اختياري)</label>
-            <input id="s_name" type="text" placeholder="اسمك" />
-          </div>
-          <div class="field">
-            <label for="s_msg">استفسارك (إجباري)</label>
-            <textarea id="s_msg" rows="4" placeholder="مثال: واجهت مشكلة في رفع الإيصال / أحتاج تأكيد تفعيل الاشتراك..."></textarea>
+          <div class="warn" style="margin-top:14px">
+            <strong>مهم:</strong> يتم الرد أولاً للحسابات <strong>المشتركة/المحوّلة</strong>.  
+            (الطلبات الناقصة تتأخر لأننا نرجع نطلب تفاصيل إضافية)
           </div>
 
-          <button id="supportSend" class="btn btn-primary" type="submit"><span class="spark"></span>إرسال عبر تيليجرام</button>
+          <div class="spacer"></div>
+
+          <div class="muted" style="font-size:13px">
+            بعد الإرسال: راح يفتح لك نص جاهز… اضغط إرسال داخل تيليجرام، وإذا عندك إيصال أرفقه بنفس المحادثة.
+          </div>
+        </div>
+
+        <form id="supportForm" class="card pad form" novalidate>
+          <div class="field">
+            <label>اسمك</label>
+            <input id="supName" type="text" placeholder="مثال: عبدالله العتيبي" required />
+          </div>
+
+          <div class="field">
+            <label>نوع الطلب</label>
+            <select id="supType" required>
+              <option value="" selected disabled>اختر…</option>
+              <option value="متابعة تفعيل بعد التحويل">متابعة تفعيل بعد التحويل</option>
+              <option value="استفسار قبل الاشتراك">استفسار قبل الاشتراك</option>
+              <option value="مشكلة داخل المنصة / الاختبار">مشكلة داخل المنصة / الاختبار</option>
+              <option value="اقتراح / ملاحظة">اقتراح / ملاحظة</option>
+            </select>
+          </div>
+
+          <div class="grid two">
+            <div class="field">
+              <label>هل أنت مشترك/محول؟</label>
+              <select id="supSubscriber" required>
+                <option value="نعم">نعم</option>
+                <option value="لا">لا</option>
+              </select>
+            </div>
+
+            <div class="field" data-subscriber>
+              <label>مبلغ التحويل</label>
+              <input id="supAmount" type="number" inputmode="numeric" placeholder="449" />
+              <div class="muted" style="font-size:12px;margin-top:6px">اكتب نفس مبلغ الاشتراك اللي حولته.</div>
+            </div>
+          </div>
+
+          <div class="grid two" data-subscriber>
+            <div class="field">
+              <label>وقت التحويل (تقريبي)</label>
+              <input id="supTransferTime" type="text" placeholder="مثال: 9:20م - الثلاثاء" />
+            </div>
+            <div class="field">
+              <label>آخر 4 أرقام/مرجع (مهم)</label>
+              <input id="supRef" type="text" placeholder="مثال: 8421" />
+            </div>
+          </div>
+
+          <div class="grid two">
+            <div class="field">
+              <label>رقم الجوال (اختياري)</label>
+              <input id="supPhone" type="tel" inputmode="tel" placeholder="05xxxxxxxx" />
+            </div>
+            <div class="field">
+              <label>موعد اختبار STEP (اختياري)</label>
+              <input id="supTestDate" type="date" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>تفاصيل الطلب</label>
+            <textarea id="supMsg" rows="5" placeholder="اكتب التفاصيل هنا…" required></textarea>
+            <div class="muted" style="font-size:12px;margin-top:6px">كل ما كانت التفاصيل أوضح، يكون الرد أسرع.</div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">إرسال (يفتح رسالة جاهزة)</button>
+            <a class="btn btn-ghost" href="faq.html">أسئلة سريعة</a>
+          </div>
         </form>
       </div>
     </div>
-
-    <div class="spacer"></div>
-    <div class="card pad soft">
-      <b style="font-size:14px">نصيحة سريعة</b>
-      <p class="muted" style="margin:8px 0 0">
-        لتسريع التفعيل: جهّز <b>الاسم</b> + <b>الإيصال</b> + <b>موعد الاختبار</b> إن وجد — وأرسلها في رسالة واحدة.
-      </p>
-    </div>
   </section>
-</div>
+</main>
 
-  </main>
 
   <footer class="app-footer">
     <div class="container footer-inner">
@@ -154,7 +209,7 @@
         <a href="refund.html" data-no-spa>الاسترجاع</a>
       </div>
       <div class="footer-note">
-        تواصل رسمي: <a href="https://t.me/Ayed_Academy_2026" target="_blank" rel="noopener">@Ayed_Academy_2026</a><br>
+        الدعم الرسمي: <a href="support.html" data-no-spa>نموذج الدعم</a> — <span class="muted">@Ayed_Academy_2026</span><br>
         © 2026 أكاديمية عايد — جميع الحقوق محفوظة.
       </div>
     </div>
@@ -239,7 +294,7 @@
               <b style="font-size:13px;">تواصل رسمي (تيليجرام)</b>
               <p class="muted" style="margin:8px 0 0">إذا احتجت تأكيد/مشكلة بالإيصال — تواصل معنا مباشرة.</p>
               <div class="spacer"></div>
-              <button class="btn btn-primary" type="button" data-contact><span class="spark"></span>فتح تيليجرام</button>
+              <button class="btn btn-primary" type="button" data-contact><span class="spark"></span>نموذج الدعم الرسمي</button>
             </div>
           </div>
         </div>
@@ -296,10 +351,10 @@
     </template>
     
 
-  <script src="assets/app.js?v=20260128"></script>
-  <script src="assets/test.js?v=20260128"></script>
-  <script src="assets/results.js?v=20260128"></script>
-  <script src="assets/register.js?v=20260128"></script>
-  <script src="assets/support.js?v=20260128"></script>
+  <script src="assets/app.js?v=20260128b"></script>
+  <script src="assets/test.js?v=20260128b"></script>
+  <script src="assets/results.js?v=20260128b"></script>
+  <script src="assets/register.js?v=20260128b"></script>
+  <script src="assets/support.js?v=20260128b"></script>
 </body>
 </html>

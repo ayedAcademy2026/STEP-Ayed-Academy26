@@ -1,7 +1,7 @@
 {
-  "name": "أكاديمية عايد — دورة STEP المكثفة 2026",
-  "short_name": "أكاديمية عايد الرسمية",
-  "description": "اختبار تحديد مستوى STEP + خطة مذاكرة + تسجيل في دورة STEP المكثفة 2026 — أكاديمية عايد.",
+  "name": "أكاديمية عايد — STEP المكثفة 2026",
+  "short_name": "Ayed STEP",
+  "description": "اختبار تحديد مستوى + خطة مذاكرة + تسجيل سريع لدورة STEP المكثفة 2026.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -19,7 +19,13 @@
       "src": "assets/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
